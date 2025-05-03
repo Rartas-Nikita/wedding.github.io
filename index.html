@@ -260,34 +260,46 @@
     <div class="confirmation">
         <div class="container">
             <h2 class="confirmation__title">Подтвердите присутствие</h2>
-            <p class="confirmation__text">Подтвердите свое присутствие и ответьте на несколько вопросов. Это поможет в
-                организации торжества! Будем ждать ваш ответ до 01.06.2025</p>
-            <form class="confirmation__form">
+            <p class="confirmation__text">Подтвердите свое присутствие и ответьте на несколько вопросов. Это поможет в организации торжества! Будем ждать ваш ответ до 01.06.2025</p>
+            
+            <!-- Изменённая форма для Formspree -->
+            <form class="confirmation__form" action="https://formspree.io/f/mldbjwqb" method="POST">
+                <!-- Добавьте скрытое поле для темы письма -->
+                <input type="hidden" name="_subject" value="Новое подтверждение присутствия">
+                
+                <!-- Добавьте поле для reply-to (необязательно) -->
+                <input type="hidden" name="_replyto" value="noreply@example.com">
+                
+                <!-- Ваши существующие поля -->
                 <div class="form-group">
                     <label for="name">Фамилия и Имя (перечислите всех)</label>
-                    <input type="text" id="name" name="name" placeholder="Антон и Анна, Стас (4 года) - Ивановы"
-                        required>
+                    <input type="text" id="name" name="ФИО гостей" placeholder="Антон и Анна, Стас (4 года) - Ивановы" required>
                 </div>
+                
                 <div class="form-group">
                     <label>Сможете ли Вы присутствовать на свадьбе?</label>
                     <div class="form-options">
-                        <label><input type="radio" name="attendance" value="yes" required> Смогу / сможем
-                            присутствовать</label>
-                        <label><input type="radio" name="attendance" value="maybe"> Затрудняюсь ответить, сообщу
-                            позже</label>
-                        <label><input type="radio" name="attendance" value="no"> Не смогу прийти</label>
+                        <label><input type="radio" name="Присутствие на свадьбе" value="Смогу/сможем присутствовать" required> Смогу / сможем присутствовать</label>
+                        <label><input type="radio" name="Присутствие на свадьбе" value="Затрудняюсь ответить"> Затрудняюсь ответить, сообщу позже</label>
+                        <label><input type="radio" name="Присутствие на свадьбе" value="Не смогу прийти"> Не смогу прийти</label>
                     </div>
                 </div>
+                
                 <div class="form-group">
                     <label>Сможете ли Вы быть на регистрации в ЗАГСе?</label>
                     <div class="form-options">
-                        <label><input type="radio" name="registration" value="yes" required> Смогу / сможем
-                            присутствовать</label>
-                        <label><input type="radio" name="registration" value="maybe"> Затрудняюсь ответить, сообщу
-                            позже</label>
-                        <label><input type="radio" name="registration" value="no"> Не смогу прийти</label>
+                        <label><input type="radio" name="Присутствие в ЗАГСе" value="Смогу/сможем присутствовать" required> Смогу / сможем присутствовать</label>
+                        <label><input type="radio" name="Присутствие в ЗАГСе" value="Затрудняюсь ответить"> Затрудняюсь ответить, сообщу позже</label>
+                        <label><input type="radio" name="Присутствие в ЗАГСе" value="Не смогу прийти"> Не смогу прийти</label>
                     </div>
                 </div>
+                
+                <!-- Добавьте перенаправление после отправки -->
+                <input type="hidden" name="_next" value="https://rartas-nikita.github.io/wedding.github.io/thanks.html">
+                
+                <!-- Защита от спама -->
+                <input type="text" name="_gotcha" style="display:none">
+                
                 <button type="submit" class="confirmation__button">Отправить</button>
             </form>
         </div>
