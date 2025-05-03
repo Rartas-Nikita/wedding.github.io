@@ -1,0 +1,106 @@
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(/image/wedding-background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0));
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.main__content {
+    text-align: center;
+    color: white;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.main__content.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.main__title {
+    font-size: 4rem;
+    margin: 0;
+    line-height: 1.2;
+    
+}
+
+.main__name {
+    font-family: "Passions Conflict", cursive;
+  font-weight: 400;
+    font-size: 10rem;
+    display: block;
+    line-height: 0.9;
+    margin: 0.2em 0; 
+}
+
+
+.main__text {
+    font-size: 1.5rem;
+    margin-top: 10rem;
+    margin-bottom: 2rem;
+    text-transform:uppercase;
+    
+}
+
+.main__date{
+    font-size: 1.7rem;
+    margin: 0;
+    text-transform:uppercase;
+}
+
+@media (max-width: 768px) {
+    .main__title {
+        font-size: 3rem;
+        padding-bottom:300px;
+    }
+
+    .main__name {
+        font-size: 8rem;
+    }
+
+    .main__text {
+        font-size: 1.2rem;
+        margin-top: 5rem;
+    }
+
+    .main__date {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main__title {
+        font-size: 2rem;
+    }
+
+    .main__name {
+        font-size: 6rem;
+    }
+
+    .main__text {
+        font-size: 1rem;
+        margin-top: 3rem;
+    }
+
+    .main__date {
+        font-size: 1.2rem;
+    }
+}

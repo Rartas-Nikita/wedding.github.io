@@ -1,0 +1,112 @@
+
+.countdown {
+    padding: 50px 0;
+    background-color: #f1f1e9;
+    text-align: center;
+}
+
+.countdown__title,
+.countdown__timer {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.countdown.visible .countdown__title,
+.countdown.visible .countdown__timer {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.countdown__title {
+    font-size: 45px;
+    line-height: 1;
+    margin-bottom: 50px;
+    font-family: "Cormorant Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    color: #9b423a;
+}
+
+.countdown__timer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.countdown__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    height: 100px; 
+}
+
+.countdown__item span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: "Cormorant Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+#days, #hours, #minutes, #seconds {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+    line-height: 1;
+}
+.countdown__label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: #666;
+    margin-top: 20px;
+}
+
+/* Адаптация для планшетов */
+@media (max-width: 768px) {
+    .countdown__title {
+        font-size: 35px;
+    }
+
+    #days, #hours, #minutes, #seconds { 
+        font-size: 44px;
+    }
+
+    .countdown__label {
+        font-size: 16px;
+    }
+
+    .countdown__timer {
+        gap: 15px;
+    }
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 480px) {
+    .countdown__title {
+        font-size: 28px;
+    }
+
+    #days, #hours, #minutes, #seconds {
+        font-size: 34px;
+    }
+
+    .countdown__label {
+        font-size: 20px; /* Уменьшаем размер текста */
+    }
+
+    .countdown__timer {
+        gap: 10px;
+        flex-wrap: nowrap; /* Убираем перенос на новую строку */
+    }
+
+    .countdown__item {
+        width: auto; /* Убираем фиксированную ширину */
+    }
+}

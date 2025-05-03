@@ -1,0 +1,114 @@
+
+.chat {
+    padding: 90px 0;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1e9;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.chat__title {
+    font-size: 45px;
+    color: #9b423a;
+    margin-bottom: 50px;
+    font-family: "Cormorant Garamond", serif;
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.chat__text {
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.chat__text:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.chat__button {
+    display: inline-block;
+    padding: 15px 30px;
+    margin-top: 15px;
+    font-size: 20px;
+    color: white;
+    background-color: #ff6b6b;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.chat__button:hover {
+    background-color: #e65a5a; 
+}
+
+.chat__title.visible {
+    opacity: 1;
+    transform: translateY(0); 
+}
+
+.chat__text.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.chat__button.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.chat__button.pulse {
+    animation: pulse 1.5s infinite;
+}
+
+@media (max-width: 768px) {
+    .chat__title {
+        font-size: 35px;
+    }
+
+    .chat__text {
+        font-size: 16px;
+    }
+
+    .chat__button {
+        padding: 12px 25px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .chat__title {
+        font-size: 30px;
+    }
+
+    .chat__text {
+        font-size: 0.9rem;
+    }
+
+    .chat__button {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+}

@@ -1,0 +1,128 @@
+
+.schedule {
+    padding: 0 30px ;
+    text-align: center;
+    background-color: #f1f1e9;
+    min-height: 100%
+}
+
+.schedule__title {
+    font-size: 45px;
+    color: #9b423a;
+    margin-bottom: 40px;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.schedule__date {
+    font-size:  20px ;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.schedule__events {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+
+.schedule__events::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 80px;
+    width: 2px;
+    height: 100%;
+    background-color: #ff6b6b;
+}
+
+.schedule-event {
+    display: flex;
+    align-items: flex-start;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.schedule-event:not(:last-child){
+    margin-bottom: 40px;
+}
+
+.schedule-event.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.schedule-event__time {
+    font-size: 20px;
+    color: #333;
+    width: 100px;
+    flex-shrink: 0;
+}
+
+.schedule-event__marker {
+    width: 10px;
+    height: 10px;
+    background-color: #ff6b6b;
+    border-radius: 50%;
+    margin: 8px 20px 0 20px;
+    flex-shrink: 0;
+}
+
+.schedule-event__details {
+    flex-grow: 1;
+}
+
+.schedule-event__name {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.schedule-event__location {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.schedule-event__note {
+    font-size: 1rem;
+    color: #ff6b6b;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .schedule{
+        padding-top: 70px;
+    }
+}
+@media (max-width: 480px) {
+
+    .schedule__title {
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+
+    .schedule__date {
+        font-size:18px;
+    }
+
+    .schedule-event__time {
+        font-size: 0.9rem;
+    }
+
+    .schedule-event__name {
+        font-size: 0.9rem;
+    }
+
+    .schedule-event__location {
+        font-size: 0.9rem;
+    }
+
+    .schedule-event__note {
+        font-size: 0.9rem;
+    }
+}

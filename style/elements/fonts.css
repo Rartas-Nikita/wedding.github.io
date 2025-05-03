@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'Passions Conflict'; /* Название, которое будет использоваться в CSS */
+    src: url('/fonts/PassionsConflictRUS-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; /* Чтобы текст не "моргал" при загрузке */
+}

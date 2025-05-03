@@ -1,0 +1,251 @@
+
+.confirmation {
+    padding: 50px 0;
+    background-color: #f1f1e9;
+    text-align: center;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.confirmation__title {
+    font-size: 45px;
+    line-height: 1;
+    margin-bottom: 50px;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #9b423a;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.confirmation__text {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 50px;
+    line-height: 1.6;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.confirmation__form {
+    background-color: transparent;
+    padding: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.confirmation__form.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    font-size: 20px;
+    text-align: left;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out
+}
+
+.form-group label {
+    display: block;
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus+label,
+.form-group select:focus+label {
+    color: #ff6b6b;
+
+}
+
+.form-group input[type="text"],
+.form-group select {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 16px;
+    border: none;
+    border-bottom: 1px solid #ff6b6b;
+    background-color: transparent;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group select:focus {
+    border-bottom-color: #ff6b6b;
+    outline: none;
+    transform: scale(1.02);
+}
+
+.form-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-options label {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #666;
+
+}
+
+
+.form-options input[type="radio"] {
+    margin-right: 10px;
+    accent-color: #ff6b6b;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+}
+
+.form-options input[type="radio"]:checked {
+    background-color: #ff6b6b;
+    border-color: #ff6b6b;
+    transform: scale(1.1);
+}
+
+@keyframes buttonPop {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.confirmation__button {
+    display: block;
+    width: 50%;
+    margin: 20px auto 0;
+    padding: 15px;
+    font-size: 18px;
+    color: white;
+    background-color: #ff6b6b;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out, background-color 0.3s ease;
+}
+
+.confirmation.visible .confirmation__button {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    animation: buttonPop 0.5s ease-out forwards;
+}
+
+.confirmation__button:hover {
+    background-color: #e65a5a;
+    transform: scale(1.05);
+}
+
+.confirmation__button:active {
+    transform: scale(0.95);
+}
+
+.confirmation.visible .confirmation__title,
+.confirmation.visible .confirmation__text,
+.confirmation.visible .confirmation__form,
+.confirmation.visible .form-group,
+.confirmation.visible .confirmation__button {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.confirmation.visible .confirmation__title {
+    transition-delay: 0.2s;
+}
+
+.confirmation.visible .confirmation__text {
+    transition-delay: 0.4s;
+}
+
+.confirmation.visible .confirmation__form {
+    transition-delay: 0.6s;
+}
+
+.confirmation.visible .form-group {
+    transition-delay: 0.8s; 
+}
+
+.confirmation.visible .confirmation__button {
+    transition-delay: 1s;
+}
+
+@media (max-width: 768px) {
+    .confirmation__title {
+        font-size: 30px;
+    }
+
+    .confirmation__text {
+        font-size: 16px;
+    }
+
+    .form-group label {
+        font-size: 14px;
+    }
+
+    .form-group input[type="text"],
+    .form-group select {
+        font-size: 14px;
+    }
+
+    .confirmation__button {
+        font-size: 16px;
+        width: 60%;
+    }
+}
+
+@media (max-width: 480px) {
+    .confirmation__title {
+        font-size: 28px;
+    }
+
+    .confirmation__text {
+        font-size: 14px;
+    }
+
+    .form-group label {
+        font-size: 13px;
+    }
+
+    .form-group input[type="text"],
+    .form-group select {
+        font-size: 12px;
+    }
+
+    .confirmation__button {
+        font-size: 14px;
+        width: 70%;
+
+    }
+}

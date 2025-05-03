@@ -1,0 +1,106 @@
+
+.locations {
+    align-items: center;
+    padding: 70px 0;
+    text-align: center;
+    background-color: #f1f1e9;
+    overflow: hidden;
+}
+
+.locations__title {
+    font-size: 45px;
+    color: #9b423a;
+    margin-bottom: 50px;
+    font-family: "Cormorant Garamond", serif;
+    opacity: 0;
+    transform: translateY(-50px); /* Начальное положение: выше видимой области */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.locations__accordion {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.locations__item {
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateX(-100%); /* Начальное положение: слева за пределами экрана */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.locations__item:nth-child(2) {
+    transition-delay: 0.2s; /* Задержка для второго элемента */
+}
+
+.locations__item:nth-child(3) {
+    transition-delay: 0.4s; /* Задержка для третьего элемента */
+}
+
+.locations__header {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2rem;
+    text-align: left;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.locations__header:hover {
+    background-color: #e65a5a;
+}
+
+.locations__content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+    padding: 0 15px;
+    background-color: #f9f9f9
+}
+
+
+.locations__content.active {
+    max-height: 500px;
+    padding: 15px;
+}
+
+.locations__map {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.locations__title.visible {
+    opacity: 1;
+    transform: translateY(0); 
+}
+
+.locations__item.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+
+@media (max-width: 768px) {
+    .locations__title {
+        font-size: 35px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .locations__title {
+        font-size: 30px;
+    }
+
+    .locations__header {
+        font-size: 0.9rem;
+    }
+}
