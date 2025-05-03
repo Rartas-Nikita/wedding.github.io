@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: url(image/wedding-background.jpg);
+    background-image: url(../../image/wedding-background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -69,11 +69,12 @@
 @media (max-width: 768px) {
     .main__title {
         font-size: 3rem;
-        padding-bottom:300px;
+        padding-bottom:260px;
     }
 
     .main__name {
         font-size: 8rem;
+        line-height: 0.6;
     }
 
     .main__text {
@@ -84,6 +85,10 @@
     .main__date {
         font-size: 1.4rem;
     }
+
+    .main::before {
+        background: rgba(0, 0, 0, 0.3);
+    }
 }
 
 @media (max-width: 480px) {
@@ -93,6 +98,7 @@
 
     .main__name {
         font-size: 6rem;
+        
     }
 
     .main__text {
@@ -103,4 +109,6 @@
     .main__date {
         font-size: 1.2rem;
     }
+
+
 }

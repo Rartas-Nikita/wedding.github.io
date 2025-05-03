@@ -1,4 +1,3 @@
-
 .locations {
     align-items: center;
     padding: 70px 0;
@@ -13,7 +12,7 @@
     margin-bottom: 50px;
     font-family: "Cormorant Garamond", serif;
     opacity: 0;
-    transform: translateY(-50px); /* Начальное положение: выше видимой области */
+    transform: translateY(-50px);
     transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
@@ -29,19 +28,22 @@
     border-radius: 10px;
     overflow: hidden;
     opacity: 0;
-    transform: translateX(-100%); /* Начальное положение: слева за пределами экрана */
+    transform: translateX(-100%);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .locations__item:nth-child(2) {
-    transition-delay: 0.2s; /* Задержка для второго элемента */
+    transition-delay: 0.2s;
 }
 
 .locations__item:nth-child(3) {
-    transition-delay: 0.4s; /* Задержка для третьего элемента */
+    transition-delay: 0.4s;
 }
 
 .locations__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     padding: 15px;
     font-size: 1.2rem;
@@ -53,6 +55,42 @@
     transition: background-color 0.3s ease;
 }
 
+.accordion-icon {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+}
+
+.accordion-icon::before,
+.accordion-icon::after {
+    content: '';
+    position: absolute;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.accordion-icon::before {
+    width: 100%;
+    height: 2px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.accordion-icon::after {
+    width: 2px;
+    height: 100%;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+}
+
+/* Когда аккордеон активен, вертикальная линия исчезает */
+.locations__header.active .accordion-icon::after {
+    transform: translateX(-50%) scaleY(0);
+}
+
 .locations__header:hover {
     background-color: #e65a5a;
 }
@@ -62,9 +100,8 @@
     overflow: hidden;
     transition: max-height 0.5s ease-out, padding 0.5s ease-out;
     padding: 0 15px;
-    background-color: #f9f9f9
+    background-color: #f9f9f9;
 }
-
 
 .locations__content.active {
     max-height: 500px;
@@ -76,9 +113,10 @@
     overflow: hidden;
     border-radius: 10px;
 }
+
 .locations__title.visible {
     opacity: 1;
-    transform: translateY(0); 
+    transform: translateY(0);
 }
 
 .locations__item.visible {
@@ -86,20 +124,16 @@
     transform: translateX(0);
 }
 
-
-
 @media (max-width: 768px) {
     .locations__title {
         font-size: 35px;
     }
 }
 
-
 @media (max-width: 480px) {
     .locations__title {
         font-size: 30px;
     }
-
     .locations__header {
         font-size: 0.9rem;
     }
